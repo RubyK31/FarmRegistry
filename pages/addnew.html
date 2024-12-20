@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FarmRegistry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg nav-bg text-light p-2">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <a class="navbar-brand text-light me-3" href="#">
+                <img src="../images/logo farm.png" alt="Logo" class="img-fluid">
+            </a>
+
+            <form class="d-flex mx-auto w-25 width-50 cust-order-3" role="search">
+                <div class="input-group">
+                    <input type="search" class="form-control rounded-4" placeholder="Search project..."
+                        aria-label="Search">
+                    <span
+                        class="input-group-text bg-transparent border-0 position-absolute top-50 end-0 translate-middle-y me-3">
+                        <i class="bi bi-search"></i>
+                    </span>
+                </div>
+            </form>
+
+            <div class="d-flex align-items-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light d-flex align-items-center" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="position-relative">
+                                <img src="../images/image 2.png" alt="Profile"
+                                    class="img-fluid rounded-circle border border-white me-2 profile-img">
+                                <span
+                                    class="position-absolute bg-danger border border-light rounded-circle red-dot"></span>
+                            </div>
+                            <span class="hide-name">&nbsp;Sébastien Hugot</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Add the toggle icon for small screens -->
+                <button class="btn text-light ms-3 toggle-btn display-lg-none" id="sidebarToggle">
+                    <i class="bi bi-three-dots"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="body-bg">
+                <div class="row">
+                    <!-- Sidebar -->
+                    <div id="sidebar" class="custom-width-sidebar m-0 bg-white">
+                        <div class="row d-flex align-items-center justify-content-center m-0 p-3">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1">
+                                <i class="fas fa-project-diagram m-3"></i> Projects
+                            </a>
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1">
+                                <i class="fas fa-tractor m-3"></i> Farmers
+                            </a>
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1">
+                                <i class="fas fa-map m-3"></i> Fields
+                            </a>
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1">
+                                <i class="fa-regular fa-file m-3"></i> Registry
+                            </a>
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1">
+                                <i class="fas fa-store m-3"></i> Marketplace
+                            </a>
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1">
+                                <i class="fa-solid fa-chart-column m-3"></i> Statistics
+                            </a>
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1 mt-4">
+                                <i class="fa-solid fa-user-gear m-3"></i> Account
+                            </a>
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1">
+                                <i class="fa-solid fa-headset m-3"></i> Support
+                            </a>
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center hover-1">
+                                <i class="fa-solid fa-user-secret m-3"></i> Admin
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Right-content -->
+
+          
+                    <div id="main-content" class="right-width">
+                        <div class="row mx-1 bg-white">
+                            <div class="m-2 p-3">
+                                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="../pages/details.html"
+                                                class="text-dark">Projects</a></li>
+                                        <li class="breadcrumb-item active text-dark" aria-current="page">New Project
+                                        </li>
+                                    </ol>
+                                </nav>
+                                <h2 class="font-size-34 font-color-green fw-bold ">Add New Project</h2>
+                                <p class="font-16">Please fill the following form to add a new project.</p>
+                            </div>
+
+
+                            <div class="row m-2 p-2">
+                                <div class="col-md-12">
+                                    <form class="mb-5 form-width-80">
+                                        <div class="mb-5">
+                                            <p class="font-20 fw-bold">Project information</p>
+                                            <div class="row mb-5">
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form font-16 ms-2 label-bg">ID_project<span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form ms-2 label-bg">Project name <span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form ms-2 label-bg">Project code <span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-5">
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>One</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="color-form ms-2 label-bg" for="floatingSelect">Type
+                                                        <span class="text-danger">*</span></label>
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form ms-2 label-bg">Project developer <span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form ms-2 label-bg">Project external ID <span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row mb-5">
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>Urban</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="ms-2 label-bg" for="floatingSelect">Region <span
+                                                            class="text-danger">*</span></label>
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>Indonesia</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="ms-2 label-bg" for="floatingSelect">Country <span
+                                                            class="text-danger">*</span></label>
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form ms-2 label-bg">Location <span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row mb-5">
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="text"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg text-success"
+                                                        id="statusInput" placeholder="5%" value="ACTIVE">
+                                                    <label class="color-form ms-2 label-bg" for="statusInput">Status
+                                                        <span class="text-danger">*</span></label>
+                                                </div>
+
+                                                <div class="col-md-4 form-floating position-relative my-3">
+                                                    <input type="text"
+                                                        class="form-control rounded-0 border-0 border-bottom border-black text-center pe-5 in-bg"
+                                                        id="imageName" placeholder="No file selected" readonly>
+                                                    <label for="imageName" class="color-form ms-2 label-bg">Project
+                                                        Image <span class="text-danger">*</span></label>
+
+                                                    <i class="fas fa-upload position-absolute end-0 translate-middle-y me-3 fs-4 top-40p color-form"
+                                                        style="cursor: pointer;"></i>
+                                                    <p class="ms-2 color-form label-bg">File format: .jpg, .png, .gif,
+                                                        .svg</p>
+                                                </div>
+
+                                                <div class="col-md-4 my-3">
+                                                    <label for="fileInput" class="d-inline-block in-bg">
+                                                        <i class="fa-solid fa-image fa-2x icon-border color-form"
+                                                            style="cursor: pointer;"></i>
+                                                    </label>
+                                                    <input type="file" id="fileInput"
+                                                        class="form-control visually-hidden"
+                                                        onchange="displayFileName()" />
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-8 mb-3 mt-2 form-floating my-3">
+                                                    <textarea
+                                                        class="form-control border-0 border-black border-bottom rounded-0 in-bg"
+                                                        placeholder="Leave a comment here" id="floatingTextarea2"
+                                                        style="height: 100px"></textarea>
+                                                    <label class="ms-2 label-bg" for="floatingTextarea2">Project
+                                                        Description <span class="text-danger">*</span></label>
+                                                    <div class="d-flex justify-content-between mx-2">
+                                                        <div>Maximum 200 characters</div>
+                                                        <div>0/200</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-5">
+                                            <p class="font-20 fw-bold">Methodology</p>
+                                            <div class="row mb-5">
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>One</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="ms-2 label-bg" for="floatingSelect">Registry <span
+                                                            class="text-danger">*</span></label>
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>One</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="ms-2 label-bg" for="floatingSelect">Standard <span
+                                                            class="text-danger">*</span></label>
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>One</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="ms-2 label-bg" for="floatingSelect">Methodology <span
+                                                            class="text-danger">*</span></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-5">
+
+                                                <div class="col-md-4 form-floating position-relative my-3">
+                                                    <input type="text"
+                                                        class="form-control rounded-0 border-0 border-bottom border-black text-center pe-5 in-bg"
+                                                        id="imageName" placeholder="No file selected" readonly>
+                                                    <label for="imageName" class="color-form ms-2 label-bg">Methodolgy
+                                                        contract <span class="text-danger">*</span></label>
+
+                                                    <i class="fas fa-upload position-absolute end-0 translate-middle-y me-3 fs-4 top-40p color-form"
+                                                        style="cursor: pointer;"></i>
+                                                    <p class="ms-2 color-form label-bg">File format: .pdf</p>
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>Yes</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="ms-2 label-bg" for="floatingSelect">Exclusive Farm
+                                                        <span class="text-danger">*</span></label>
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>Yes</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="ms-2 label-bg" for="floatingSelect">Exclusive Field
+                                                        <span class="text-danger">*</span></label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row mb-5">
+                                                <div class="col-md-4 form-floating position-relative my-3">
+                                                    <input type="text"
+                                                        class="form-control rounded-0 border-0 border-bottom border-black text-start pe-5 in-bg"
+                                                        id="date-1">
+                                                    <label for="date-1" class="color-form ms-2 label-bg">Registration
+                                                        date <span class="text-danger">*</span></label>
+
+                                                    <i class="fas fa-calendar position-absolute end-0 translate-middle-y me-3 fs-4 top-40p color-form"
+                                                        id="calendar-icon" style="cursor: pointer;"></i>
+                                                    <p class="ms-3 color-form">DD/MM/YYYY</p>
+                                                </div>
+                                                <div class="col-md-4 form-floating position-relative my-3">
+                                                    <input type="text"
+                                                        class="form-control rounded-0 border-0 border-bottom border-black text-start pe-5 in-bg"
+                                                        id="date-2" placeholder="No file selected" readonly>
+                                                    <label for="date-2" class="color-form ms-2 label-bg">Crediting
+                                                        period start date <span class="text-danger">*</span></label>
+
+                                                    <i class="fas fa-calendar position-absolute end-0 translate-middle-y me-3 fs-4 top-40p color-form"
+                                                        id="calendar-icon-2" style="cursor: pointer;"></i>
+                                                    <p class="ms-3 color-form">DD/MM/YYYY</p>
+                                                </div>
+
+                                                <div class="col-md-4 form-floating position-relative my-3">
+                                                    <input type="text"
+                                                        class="form-control rounded-0 border-0 border-bottom border-black text-start pe-5 in-bg"
+                                                        id="date-3" placeholder="No file selected" readonly>
+                                                    <label for="date-3" class="color-form ms-2 label-bg">Crediting
+                                                        period end date <span class="text-danger">*</span></label>
+
+                                                    <i class="fas fa-calendar position-absolute end-0 translate-middle-y me-3 fs-4 top-40p color-form"
+                                                        id="calendar-icon-3" style="cursor: pointer;"></i>
+                                                    <p class="ms-3 color-form">DD/MM/YYYY</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-5">
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <select
+                                                        class="form-select border-0 border-black border-bottom rounded-0 in-bg"
+                                                        id="floatingSelect" aria-label="Floating label select example">
+                                                        <option selected>One</option>
+                                                        <option value="1">Two</option>
+                                                        <option value="2">Three</option>
+                                                    </select>
+                                                    <label class="ms-2 label-bg" for="floatingSelect">Unit <span
+                                                            class="text-danger">*</span></label>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                        <div class="mb-5">
+                                            <p class="font-20 fw-bold">Fees</p>
+                                            <div class="row mb-5">
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form ms-2 label-bg">Farmer fees<span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form ms-2 label-bg">Project developer fees<span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                                <div class="col-md-4 form-floating my-3">
+                                                    <input type="email"
+                                                        class="form-control rounded-0 border-0 border-black border-bottom in-bg"
+                                                        id="floatingInputValue" placeholder="5%" value="">
+                                                    <label class="color-form ms-2 label-bg">Registry fees<span
+                                                            class="text-danger">*</span></label>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="d-flex gap-2">
+                                                <button
+                                                    class="btn btn-outline-dark cust-white-btn py-2 px-4 rounded-5 text-dark fw-bold">Cancel</button>
+                                                <a href="../pages/details.html">
+                                                    <button
+                                                        class="green-btn-2 py-2 px-4 rounded-5 text-dark fw-bold">Add</button>
+                                                </a>
+                                            </div>
+
+
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- end of content -->
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        function displayFileName() {
+            const fileInput = document.getElementById('fileInput');
+            const imageNameInput = document.getElementById('imageName');
+            const fileName = fileInput.files[0] ? fileInput.files[0].name : 'No file selected';
+            imageNameInput.value = fileName;
+        }
+
+            flatpickr("#date-1", {
+            dateFormat: "d/m/Y",
+            allowInput: true, 
+            disableMobile: true // Prevent default calendar icons on mobile devices
+        });
+
+        flatpickr("#date-2", {
+            dateFormat: "d/m/Y",
+            allowInput: true,
+            disableMobile: true
+        });
+
+        flatpickr("#date-3", {
+            dateFormat: "d/m/Y",
+            allowInput: true,
+            disableMobile: true
+        });
+
+
+        document.getElementById('calendar-icon').addEventListener('click', function () {
+            flatpickr("#date-1").open();
+        });
+        document.getElementById('calendar-icon-2').addEventListener('click', function () {
+            flatpickr("#date-2").open();
+        });
+        document.getElementById('calendar-icon-3').addEventListener('click', function () {
+            flatpickr("#date-3").open();
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.getElementById("sidebar");
+            const toggleButton = document.getElementById("sidebarToggle");
+            const backdrop = document.getElementById("backdrop");
+
+            // Toggle sidebar when button is clicked
+            toggleButton.addEventListener("click", function () {
+                sidebar.classList.toggle("show");
+                backdrop.classList.toggle("show");
+            });
+
+            // Close sidebar when backdrop is clicked
+            backdrop.addEventListener("click", function () {
+                sidebar.classList.remove("show");
+                backdrop.classList.remove("show");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
